@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Recast will send a post request to /errors to notify important errors
 // described in a json body
 app.post('/errors', (req, res) => {
-   console.error(req.body);
+   console.error(req.body.nlp);
    res.sendStatus(200);
 });
 
