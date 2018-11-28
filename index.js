@@ -32,6 +32,17 @@ let pokemon = req.body.nlp.entities.pokemon[0].value;
 params = {};
 axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(results => {
 
+
+
+  if(results.data == null){
+    let answer = [
+      {
+        type: 'text',
+        content: `could not find Pokémon ${pokemon}`
+      }
+    ]
+  }
+
   let data = results.data;
   let name = data.name.toUpperCase();
   let type = data.types[0].type.name;
