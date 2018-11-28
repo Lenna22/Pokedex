@@ -17,7 +17,7 @@ app.post('/errors', (req, res) => {
 
 app.get('/logg' , (req, res) => {
   res.json({
-    req: lastReq.body.nlp.entities.pokemon[0].value;
+    req: lastReq.body.nlp.entities.pokemon[0].value
   })
 });
 
