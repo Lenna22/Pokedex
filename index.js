@@ -28,26 +28,20 @@ app.post('/pikachu', (req,res) => {
   //https://pokeapi.co/api/v2/pokemon/${name}/
 lastReq = req;
 
-let pokemon = req.body.nlp.entities.pokemon[0].value;
+//let pokemon = req.body.nlp.entities.pokemon[0].value;
+let pokemon = "persan";
+
 params = {};
+
 axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(results => {
-
-
-
-  if(results.data == null){
-    let answer = [
-      {
-        type: 'text',
-        content: `could not find Pokémon ${pokemon}`
-      }
-    ]
-  }
-
   let data = results.data;
+
   let name = data.name.toUpperCase();
   let type = data.types[0].type.name;
   let img = data.sprites.front_default;
   let moves = data.moves;
+
+
 
   let list_entries = [];
 
@@ -60,10 +54,6 @@ axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(result
     }
     list_entries.push(entry);
   }
-
-
-
-
 
   let answer = [
     {
@@ -93,7 +83,25 @@ axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(result
     replies: answer
   });
 
+})
+.catch(function(error) {
+  console.log(`Pokémon ${pokemon.toUpperCase()} not found`);
+
+  let answer = [
+    {
+      type: "text",
+      content: `Pokémon ${pokemon.toUpperCase()} not found`
+    }
+  ]
+
+  return res.json({
+    replies: answer
+  })
+
 });
+
+
+
 
 
 
