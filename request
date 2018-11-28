@@ -1,0 +1,55 @@
+{
+    "req": {
+        "nlp": {
+            "uuid": "f0ad94ef-7bb1-464d-a765-ab6ad391ccc1",
+            "intents": [
+                {
+                    "slug": "infopokemon",
+                    "confidence": 0.99,
+                    "description": ""
+                }
+            ],
+            "entities": {
+                "pronoun": [
+                    {
+                        "person": 1,
+                        "number": "singular",
+                        "gender": "unknown",
+                        "raw": "me",
+                        "confidence": 0.89
+                    }
+                ],
+                "pokemon": [
+                    {
+                        "value": "ekans",
+                        "raw": "ekans",
+                        "confidence": 0.99
+                    }
+                ]
+            },
+            "language": "en",
+            "processing_language": "en",
+            "version": "2.12.0-20a34c24",
+            "timestamp": "2018-11-28T10:12:15.643764+00:00",
+            "status": 200,
+            "source": "show me ekans",
+            "act": "command",
+            "type": null,
+            "sentiment": "neutral"
+        },
+        "action_id": "cb7951a6-5da6-4d0c-9f68-89f1c9a9bac9",
+        "conversation": {
+            "id": "test-1543399260661",
+            "conversation_id": "test-1543399260661",
+            "warning": "The conversation_id field will be depreciated on January 1st 2018! Switch to using the id field instead",
+            "language": "en",
+            "memory": {},
+            "skill_stack": [
+                "showpikachu"
+            ],
+            "skill": "showpikachu",
+            "skill_occurences": 1,
+            "participant_data": {}
+        }
+    }
+}

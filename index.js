@@ -17,7 +17,7 @@ app.post('/errors', (req, res) => {
 
 app.get('/logg' , (req, res) => {
   res.json({
-    req: lastReq.body.nlp
+    req: lastReq.body.nlp.enteties.pokemon[0].value;
   })
 });
 
@@ -28,7 +28,7 @@ app.post('/pikachu', (req,res) => {
   //https://pokeapi.co/api/v2/pokemon/${name}/
 lastReq = req;
 
-let pokemon = "pikachu";
+let pokemon = body.nlp.enteties.pokemon[0].value;
 params = {};
 axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(results => {
 
