@@ -28,8 +28,8 @@ app.post('/pikachu', (req,res) => {
   //https://pokeapi.co/api/v2/pokemon/${name}/
 lastReq = req;
 
-//let pokemon = req.body.nlp.entities.pokemon[0].value;
-let pokemon = "persan";
+let pokemon = req.body.nlp.entities.pokemon[0].value;
+
 
 params = {};
 
