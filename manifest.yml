@@ -1,0 +1,6 @@
+---
+applications:
+- name: annalena1234
+  command: npm run start
+  path: ./
+  memory: 512M
