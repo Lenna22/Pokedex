@@ -1,6 +1,6 @@
 ---
 applications:
-- name: annalena1234
+- name: annalenaPoke
   command: npm run start
   path: ./
   memory: 512M

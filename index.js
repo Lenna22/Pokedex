@@ -14,9 +14,10 @@ app.post('/errors', (req, res) => {
    res.sendStatus(200);
 });
 
-app.get('/pikachu', (req,res) => {
+app.post('/pikachu', (req,res) => {
 
   //https://pokeapi.co/api/v2/pokemon/${name}/
+console.log(req);
 
 let pokemon = "pikachu";
 params = {};
