@@ -28,7 +28,7 @@ app.post('/pikachu', (req,res) => {
   //https://pokeapi.co/api/v2/pokemon/${name}/
 lastReq = req;
 
-let pokemon = body.nlp.entities.pokemon[0].value;
+let pokemon = req.body.nlp.entities.pokemon[0].value;
 params = {};
 axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(results => {
 
