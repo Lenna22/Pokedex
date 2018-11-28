@@ -5,6 +5,7 @@ const countryLanguage = require('country-language');
 const axios = require('axios');
 
 const app = express();
+lastReq = "";
 app.use(bodyParser.json());
 
 // Recast will send a post request to /errors to notify important errors
@@ -14,10 +15,18 @@ app.post('/errors', (req, res) => {
    res.sendStatus(200);
 });
 
+app.get('/logg' , (req, res) => {
+  res.json({
+    req: lastReq.body
+  })
+});
+
+
+
 app.post('/pikachu', (req,res) => {
 
   //https://pokeapi.co/api/v2/pokemon/${name}/
-console.log(req);
+lastReq = req;
 
 let pokemon = "pikachu";
 params = {};
@@ -78,6 +87,9 @@ axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {params}).then(result
 
 
 });
+
+
+
 
 //log.logMessage("info", "Server is listening on port %d", 3000);
 app.listen(process.env.PORT || config.PORT, () => console.log("info", `Server running on port ${config.PORT}`));
